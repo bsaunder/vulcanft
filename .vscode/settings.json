@@ -1,3 +1,7 @@
 {
-    "java.configuration.updateBuildConfiguration": "automatic"
+    "java.configuration.updateBuildConfiguration": "automatic",
+    "java.project.sourcePaths": [
+        "inventory-service/src/main/java/com/btsaunde/vulcanft/invservice",
+        "inventory-service/src"
+    ]
 }

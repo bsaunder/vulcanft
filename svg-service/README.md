@@ -4,7 +4,6 @@
 - Java / Spring Boot
 - Thymeleaf - Template Engine
 - Apache Batik - SVG Image Processing
-- MySQL  - Database
 
 ## Development Environment Setup
 1. Install [Git](https://git-scm.com/)
@@ -16,7 +15,7 @@
     - [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
     - [Docker for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
 4. Clone code repo
-5. `$ cd VulcanFT-SVGService`
+5. `$ cd svg-service`
 6. `$ mvn clean install`
 
 ## Running the Service
