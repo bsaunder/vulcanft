@@ -1,9 +1,0 @@
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/VulcanFtSvgServiceApplication.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/controller/FilamentLabelController.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/controller/HomeController.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/controller/SvgToPngController.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/model/FilamenLabel.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/service/FilamentLabelService.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/service/ImageService.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/service/SvgToPngConversionService.java
-/Users/bryansaunders/Projects/vulcanft/svg-service/src/main/java/com/btsaunde/vulcanft/svgservice/service/TemplateService.java
