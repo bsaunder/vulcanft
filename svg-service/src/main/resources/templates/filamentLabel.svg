@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Test" xmlns="http://www.w3.org/2000/svg" xmlns:th="http://www.thymeleaf.org" width="1960" height="1470" version="1.1" viewBox="0 0 1960 1470">
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <!-- Dual colour filament gradients -->
+    <linearGradient id="dualGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="10%" th:stop-color="${colorHex}" />
+      <stop offset="90%" th:stop-color="${colorHex2}" />
+    </linearGradient>
+
+    <!-- Triple colour filament gradients -->
+    <linearGradient id="tripleGradient" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="20%" th:stop-color="${colorHex}" />
+      <stop offset="50%" th:stop-color="${colorHex2}" />
+      <stop offset="80%" th:stop-color="${colorHex3}" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1960" height="1470" style="fill: white; stroke: #000; stroke-miterlimit: 10;"/>
+
+  <!-- Type -->
+  <text transform="translate(90.15 220.00)" style="font-family: Inter-Bold, Inter; font-size: 160px; font-weight: 700;"><tspan x="0" y="0">[[${type}]]</tspan></text>
+
+  <!-- Line -->
+  <text transform="translate(90.15 415.00)" style="font-family: Inter-Bold, Inter; font-size: 160px; font-weight: 700;"><tspan x="0" y="0">[[${line}]]</tspan></text>
+
+  <!-- Color Details -->
+  <circle cx="1640.00" cy="300" r="250" th:fill="${circleFill}" style="stroke: #000; stroke-miterlimit: 10; stroke-width: 5px;"/>
+  <text transform="translate(90.15 565.00)" style="font-family: Inter-Bold, Inter; font-size: 100px; font-weight: 700; text-align: center;"><tspan x="0" y="0">[[${colorName}]]</tspan></text>
+
+  <!-- Nozzle Temp -->  
+  <text transform="translate(90.15 775.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Nozzle Temp</tspan></text>
+  <text transform="translate(555.93 775.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(590.98 775.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">[[${nozzleTemp}]] ºC</tspan></text>
+
+  <!-- Bed Temp -->
+  <text transform="translate(90.15 875.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Bed Temp</tspan></text>
+  <text transform="translate(555.93 875.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(590.98 875.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">[[${bedTemp}]] ºC</tspan></text>
+
+  <!-- Print Speed -->
+  <text transform="translate(90.15 975.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Print Speed</tspan></text>
+  <text transform="translate(555.93 975.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(590.98 975.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">&lt; [[${maxPrintSpeed}]] mm/s</tspan></text>
+  
+  <!-- AMS -->
+  <text transform="translate(90.15 1075.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">AMS</tspan></text>
+  <text transform="translate(555.93 1075.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(590.98 1075.00)" style="fill: red; font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0" th:fill="${amsHex}">[[${amsCompatible}]]</tspan></text>
+
+  <!-- Drying -->
+  <text transform="translate(1100.04 775.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Drying</tspan></text>
+  <text transform="translate(1412.86 775.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(1463.13 775.00)" style="fill: red; font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0" th:fill="${dryingHex}">[[${dryingRequired}]]</tspan></text>
+
+    <!-- Drying Time -->
+  <text transform="translate(1100.04 875.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Time</tspan></text>
+  <text transform="translate(1412.86 875.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(1463.13 875.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">[[${dryingTime}]]h @ [[${dryingTemp}]] ºC</tspan></text>
+
+  <!-- Humidity -->
+  <text transform="translate(1100.04 975.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Humidity</tspan></text>
+  <text transform="translate(1412.86 975.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(1463.13 975.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">&lt; [[${maxHumiditiy}]]%</tspan></text>
+
+  <!-- Toxic -->
+  <text transform="translate(1100.04 1075.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">Toxic</tspan></text>
+  <text transform="translate(1412.86 1075.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0">:</tspan></text>
+  <text transform="translate(1463.13 1075.00)" style="font-family: Inter-Bold, Inter; font-size: 70px; font-weight: 700;"><tspan x="0" y="0" th:fill="${toxicHex}">[[${toxicFumes}]]</tspan></text>
+
+  <!-- Brand & SKU -->
+  <text transform="translate(90.15 1300.00)" style="font-family: Inter-Bold, Inter; font-size: 120px; font-weight: 700;"><tspan x="0" y="0">[[${brand}]]</tspan></text>
+  <text transform="translate(90.15 1400.00)" style="font-family: Inter-Bold, Inter; font-size: 75px; font-weight: 700;"><tspan x="0" y="0">[[${sku}]]</tspan></text>
+
+  <!-- ID -->
+  <text transform="translate(1412.86 1350.00)" style="font-family: Inter-Bold, Inter; font-size: 150px; font-weight: 700;"><tspan x="0" y="0"># [[${spoolId}]]</tspan></text>
+</svg>
