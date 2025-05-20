@@ -74,9 +74,6 @@ The generated image is 1960x1470 pixels in size. In order to print the image at 
 1. `docker buildx build . -t vulcanft-svgservice` or specify a tag with `docker buildx build . -t vulcanft-svgservice:<TAG>`
 2. `docker run -p 9000:8080 --restart=unless-stopped -d vulcanft-svgservice:latest`
 
-### With Maven
-1. `mvn clean package`
-
 ## Push the Docker Image to Docker Hub (Optional)
 If you want to push the Docker image to a registry (e.g., Docker Hub), first log in to your Docker Hub account:
 ```

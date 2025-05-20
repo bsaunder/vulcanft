@@ -1,7 +1,7 @@
 # Use an official OpenJDK runtime as a parent image
 FROM ubuntu:20.04
 
-ARG JAR_FILE
+ARG JAR_FILE=vulcanft-svgservice.jar
 
 # Set the working directory inside the container
 WORKDIR /app
