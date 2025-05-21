@@ -1,26 +1,22 @@
 package com.btsaunde.vulcanft.invservice.model;
 
+import com.btsaunde.vulcanft.invservice.model.enums.SpoolMaterialType;
+import com.btsaunde.vulcanft.invservice.model.enums.SpoolTemperature;
+
 public class Spool {
-    public enum MaterialType {
-        CARDBOARD, PLASTIC
-    }
 
-    public enum Temperature {
-        LOW, HIGH
-    }
-
-    private MaterialType materialType;
+    private SpoolMaterialType materialType;
     private double size;
     private double emptyWeight;
     private Brand brand;
     private String color;
-    private Temperature temperature;
+    private SpoolTemperature temperature;
     private boolean amsCompatible;
 
     public Spool() {
     }
 
-    public Spool(MaterialType materialType, double size, double emptyWeight, Brand brand, String color, Temperature temperature, boolean amsCompatible) {
+    public Spool(SpoolMaterialType materialType, double size, double emptyWeight, Brand brand, String color, SpoolTemperature temperature, boolean amsCompatible) {
         this.materialType = materialType;
         this.size = size;
         this.emptyWeight = emptyWeight;
@@ -30,11 +26,11 @@ public class Spool {
         this.amsCompatible = amsCompatible;
     }
 
-    public MaterialType getMaterialType() {
+    public SpoolMaterialType getMaterialType() {
         return materialType;
     }
 
-    public void setMaterialType(MaterialType materialType) {
+    public void setMaterialType(SpoolMaterialType materialType) {
         this.materialType = materialType;
     }
 
@@ -70,11 +66,11 @@ public class Spool {
         this.color = color;
     }
 
-    public Temperature getTemperature() {
+    public SpoolTemperature getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(Temperature temperature) {
+    public void setTemperature(SpoolTemperature temperature) {
         this.temperature = temperature;
     }
 
