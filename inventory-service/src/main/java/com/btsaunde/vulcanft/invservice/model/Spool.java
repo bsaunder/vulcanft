@@ -2,15 +2,31 @@ package com.btsaunde.vulcanft.invservice.model;
 
 import com.btsaunde.vulcanft.invservice.model.enums.SpoolMaterialType;
 import com.btsaunde.vulcanft.invservice.model.enums.SpoolTemperature;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "spools")
 public class Spool {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Enumerated(EnumType.STRING)
     private SpoolMaterialType materialType;
+
     private double size;
     private double emptyWeight;
+
+    @ManyToOne
+    @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
+
     private String color;
+
+    @Enumerated(EnumType.STRING)
     private SpoolTemperature temperature;
+
     private boolean amsCompatible;
 
     public Spool() {

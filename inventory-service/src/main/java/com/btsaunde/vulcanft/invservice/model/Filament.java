@@ -1,11 +1,23 @@
 package com.btsaunde.vulcanft.invservice.model;
 
 import com.btsaunde.vulcanft.invservice.model.enums.FilamentType;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "filaments")
 public class Filament {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "brand_id", nullable = false)
     private Brand brand;
+
+    @Enumerated(EnumType.STRING)
     private FilamentType type;
+
     private String line;
     private String sku;
     private String colorName;
@@ -21,6 +33,14 @@ public class Filament {
     private Boolean isAmsCompatible;
 
     // Getters and setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public Brand getBrand() {
         return brand;
     }

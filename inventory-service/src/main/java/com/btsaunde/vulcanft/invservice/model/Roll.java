@@ -2,13 +2,25 @@ package com.btsaunde.vulcanft.invservice.model;
 
 import java.time.LocalDate;
 import com.btsaunde.vulcanft.invservice.model.enums.RollLocation;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+import jakarta.persistence.Id;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.EnumType;
 
+@Entity
+@Table(name = "rolls")
 public class Roll {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long rollId;
     private Double startingSize;
     private String filament;
     private String roll;
+    @Enumerated(EnumType.STRING)
     private RollLocation location;
     private LocalDate dateOpened;
     private LocalDate dateSealed;

@@ -1,6 +1,18 @@
 package com.btsaunde.vulcanft.invservice.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "brands")
 public class Brand {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
     private String website;
     private String notes;
@@ -12,6 +24,14 @@ public class Brand {
         this.name = name;
         this.website = website;
         this.notes = notes;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -41,7 +61,8 @@ public class Brand {
     @Override
     public String toString() {
         return "Brand{" +
-                "name='" + name + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
                 ", website='" + website + '\'' +
                 ", notes='" + notes + '\'' +
                 '}';

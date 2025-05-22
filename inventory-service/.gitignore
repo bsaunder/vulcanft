@@ -27,3 +27,4 @@ replay_pid*
 # Target Folders
 */target/
 */target/*
+*/application.properties
