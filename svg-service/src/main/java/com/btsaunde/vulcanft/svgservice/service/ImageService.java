@@ -9,9 +9,16 @@ import javax.imageio.ImageIO;
 import java.awt.Image;
 import org.springframework.stereotype.Service;
 
+/**
+ * Utility service that provides basic image manipulation operations used when
+ * generating label graphics.
+ */
 @Service
 public class ImageService {
 
+        /**
+         * Crop the provided image byte array to the specified rectangle.
+         */
         public static byte[] cropImage(byte[] imageBytes, int x, int y, int width, int height) throws IOException {
         // Convert byte array to BufferedImage
         ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);
@@ -34,6 +41,9 @@ public class ImageService {
         return bos.toByteArray();
     }
 
+        /**
+         * Resize the provided image byte array to the target dimensions.
+         */
         public static byte[] resizeImage(byte[] imageBytes, int targetWidth, int targetHeight) throws IOException {
         // Convert byte array to BufferedImage
         ByteArrayInputStream bis = new ByteArrayInputStream(imageBytes);

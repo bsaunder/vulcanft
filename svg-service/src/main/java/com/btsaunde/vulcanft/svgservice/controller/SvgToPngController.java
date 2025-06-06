@@ -10,13 +10,24 @@ import org.springframework.web.bind.annotation.*;
 
 import com.btsaunde.vulcanft.svgservice.service.SvgToPngConversionService;
 
+/**
+ * Controller that exposes an endpoint to convert raw SVG markup into PNG
+ * images.
+ */
 @RestController
 @RequestMapping("/api/svg")
 public class SvgToPngController {
 
+    /** Service that handles the SVG to PNG conversion logic. */
     @Autowired
     private SvgToPngConversionService conversionService;
 
+    /**
+     * Converts a block of SVG markup into a PNG image.
+     *
+     * @param svgCode SVG XML to convert
+     * @return PNG image bytes
+     */
     @PostMapping("/convert")
     public ResponseEntity<byte[]> convertSvgToPng(@RequestBody String svgCode) {
         try {

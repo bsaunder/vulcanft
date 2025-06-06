@@ -17,15 +17,27 @@ import org.springframework.web.bind.annotation.RestController;
 import com.btsaunde.vulcanft.svgservice.model.FilamenLabel;
 import com.btsaunde.vulcanft.svgservice.service.FilamentLabelService;
 
+/**
+ * REST controller that exposes endpoints for generating filament label images.
+ */
 @RestController
 @RequestMapping("/api/label")
 public class FilamentLabelController {
 
+    /** Service responsible for generating label images from templates. */
     @Autowired
     private FilamentLabelService filamentLabelService;
 
+    /** Logger instance for this controller. */
     private static final Logger logger = LoggerFactory.getLogger(FilamentLabelController.class);
 
+    /**
+     * Generates a filament label image using the JSON body of the request to
+     * populate the template.
+     *
+     * @param filament object containing all of the label fields
+     * @return PNG image bytes of the rendered label
+     */
     @PostMapping("/filament")
     public ResponseEntity<byte[]> getFilamentLabelFromJson(@RequestBody FilamenLabel filament) {
         try{
@@ -43,6 +55,10 @@ public class FilamentLabelController {
         }
     }
 
+    /**
+     * Generates a filament label image from request parameters. Each parameter
+     * corresponds to a placeholder in the label template.
+     */
     @GetMapping("/filament")
     public ResponseEntity<byte[]> getFilamentLabel(@RequestParam(value = "brand", defaultValue = "Bambu Lab") String brand,
                                                     @RequestParam(value = "type", defaultValue = "PLA") String type,
