@@ -1,37 +1,45 @@
 # VulcanFT Inventory Service
 
-## Technology Stack
-- Java / Spring Boot
-- MySQL  - Database
+## Description
+The Inventory Service manages brands, filament rolls and parts for VulcanFT. It provides REST APIs backed by a MySQL database.
 
-## Development Environment Setup
-1. Install [Git](https://git-scm.com/)
-2. Install [VS Code](https://code.visualstudio.com/)
-3. Install VS Code Extensions
-    - [MySQL](https://marketplace.visualstudio.com/items?itemName=cweijan.vscode-mysql-client2)
-    - [Preview](https://marketplace.visualstudio.com/items?itemName=searKing.preview-vscode)
-    - [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-    - [Spring Boot Extension Pack](https://marketplace.visualstudio.com/items?itemName=vmware.vscode-boot-dev-pack)
-    - [Docker for VSCode](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker)
-4. Clone code repo
-5. `$ cd inventory-service`
-6. `$ mvn clean install`
+## Tech Stack
+- Java 21 with Spring Boot 3
+- Spring MVC, Data JPA and Thymeleaf
+- MySQL
+- Maven
 
-## Running the Service
-`mvn spring-boot:run` 
+## How to Run
+```bash
+mvn spring-boot:run
+```
+The service starts on port `8080` and requires a running MySQL instance configured in `application.properties`.
 
-## Building & Deploying the Docker Image
-### Manually
-1. `docker buildx build . -t vulcanft-invservice` or specify a tag with `docker buildx build . -t vulcanft-invservice:<TAG>`
-2. `docker run -p 9000:8080 --restart=unless-stopped -d vulcanft-invservice:latest`
+## Testing
+Run all tests with:
+```bash
+mvn test
+```
 
-## Push the Docker Image to Docker Hub (Optional)
-If you want to push the Docker image to a registry (e.g., Docker Hub), first log in to your Docker Hub account:
+## Documentation
+If Spring REST Docs is configured, generate docs using:
+```bash
+mvn verify
 ```
-docker login
+Documentation will be placed in `target/generated-docs`.
+
+## Container
+### Build
+```bash
+docker buildx build . -t vulcanft-invservice:latest
 ```
-Then push the image:
+### Run locally (Mac/Windows Docker Desktop)
+```bash
+docker run -p 9000:8080 --rm vulcanft-invservice:latest
 ```
-docker push myusername/vulcanft-invservice:latest
+### Push to Docker Hub
+Replace `<username>` with your Docker Hub ID:
+```bash
+docker tag vulcanft-invservice:latest <username>/vulcanft-invservice:latest
+docker push <username>/vulcanft-invservice:latest
 ```
-Ensure you replace myusername with your actual Docker Hub username.
