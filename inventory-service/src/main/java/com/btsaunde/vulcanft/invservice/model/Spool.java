@@ -4,6 +4,9 @@ import com.btsaunde.vulcanft.invservice.model.enums.SpoolMaterialType;
 import com.btsaunde.vulcanft.invservice.model.enums.SpoolTemperature;
 import jakarta.persistence.*;
 
+/**
+ * Metadata describing a physical spool used to hold filament rolls.
+ */
 @Entity
 @Table(name = "spools")
 public class Spool {
@@ -29,9 +32,15 @@ public class Spool {
 
     private boolean amsCompatible;
 
+    /**
+     * Default constructor for JPA.
+     */
     public Spool() {
     }
 
+    /**
+     * Convenience constructor.
+     */
     public Spool(SpoolMaterialType materialType, double size, double emptyWeight, Brand brand, String color, SpoolTemperature temperature, boolean amsCompatible) {
         this.materialType = materialType;
         this.size = size;

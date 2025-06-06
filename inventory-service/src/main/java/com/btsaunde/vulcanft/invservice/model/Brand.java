@@ -6,6 +6,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+/**
+ * Represents a filament brand or manufacturer.
+ */
 @Entity
 @Table(name = "brands")
 public class Brand {
@@ -17,9 +20,19 @@ public class Brand {
     private String website;
     private String notes;
 
+    /**
+     * Default constructor required by JPA.
+     */
     public Brand() {
     }
 
+    /**
+     * Convenience constructor.
+     *
+     * @param name    display name
+     * @param website optional brand website
+     * @param notes   additional notes
+     */
     public Brand(String name, String website, String notes) {
         this.name = name;
         this.website = website;
