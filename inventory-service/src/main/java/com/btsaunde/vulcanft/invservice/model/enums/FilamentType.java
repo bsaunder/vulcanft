@@ -1,5 +1,8 @@
 package com.btsaunde.vulcanft.invservice.model.enums;
 
+/**
+ * Enumeration of the supported filament materials.
+ */
 public enum FilamentType {
     ABS,
     ABS_GF,

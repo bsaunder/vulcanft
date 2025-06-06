@@ -1,0 +1,6 @@
+= Inventory Service API
+:toc: left
+
+== Brand
+
+include::{snippets}/brands-get/http-response.adoc[]
