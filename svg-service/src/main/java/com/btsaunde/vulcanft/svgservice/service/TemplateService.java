@@ -7,9 +7,14 @@ import org.thymeleaf.context.Context;
 
 import java.util.Map;
 
+/**
+ * Service wrapper around Thymeleaf used to populate SVG templates with values
+ * provided by the REST controllers.
+ */
 @Service
 public class TemplateService {
 
+    /** Injected Thymeleaf template engine. */
     @Autowired
     private TemplateEngine templateEngine;  // Inject the TemplateEngine
 

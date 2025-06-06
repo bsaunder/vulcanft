@@ -1,25 +1,47 @@
 package com.btsaunde.vulcanft.svgservice.model;
 
+/**
+ * Data model representing the fields required to populate a filament label.
+ * The properties correspond directly to placeholders used in the SVG template.
+ */
 public class FilamenLabel {
 
+    /** Manufacturer of the filament. */
     private String brand;
+    /** Material type such as PLA or PETG. */
     private String type;
+    /** Product line name. */
     private String line;
+    /** Stock keeping unit. */
     private String sku;
+    /** Display color name. */
     private String colorName;
+    /** Color specified as hex or semicolon separated gradient. */
     private String colorHex;
+    /** Recommended nozzle temperature range. */
     private String nozzleTemp;
+    /** Recommended bed temperature range. */
     private String bedTemp;
+    /** Maximum printer speed in mm/s. */
     private int maxPrintSpeed;
+    /** Drying temperature for the filament. */
     private int dryingTemp;
+    /** Drying time in hours. */
     private int dryingTime;
+    /** Maximum recommended relative humidity. */
     private int maxRh;
+    /** Whether drying is required before use. */
     private boolean dryingRequired;
+    /** Whether the spool is compatible with the AMS system. */
     private boolean amsCompatible;
+    /** Flag indicating if the material releases toxic fumes. */
     private boolean toxicFumes;
+    /** Unique identifier for the spool. */
     private String spoolId;
 
+    // ---------------------------------------------------------------------
     // Getters and Setters
+    // ---------------------------------------------------------------------
     public String getBrand() {
         return brand;
     }

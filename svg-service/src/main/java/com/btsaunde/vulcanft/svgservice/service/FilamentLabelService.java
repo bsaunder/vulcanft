@@ -12,17 +12,28 @@ import org.springframework.stereotype.Service;
 
 import com.btsaunde.vulcanft.svgservice.model.FilamenLabel;
 
+/**
+ * Service responsible for populating the filament label template and converting
+ * the resulting SVG into a PNG image.
+ */
 @Service
 public class FilamentLabelService {
 
+        /** Handles Thymeleaf template rendering. */
         @Autowired
         private TemplateService templateService;
 
+        /** Performs the SVG to PNG conversion. */
         @Autowired
         private SvgToPngConversionService conversionService;
 
+        /** Logger instance for this service. */
         private static final Logger logger = LoggerFactory.getLogger(FilamentLabelService.class);
 
+        /**
+         * Convenience overload that accepts a {@link FilamenLabel} instance and
+         * delegates to the detailed method.
+         */
         public byte[] generateLabelFromTemplate(FilamenLabel filamenLabel) throws IOException, TranscoderException {
 
             return generateLabelFromTemplate(
@@ -44,7 +55,11 @@ public class FilamentLabelService {
                 filamenLabel.isToxicFumes());
         }
     
-        public byte[] generateLabelFromTemplate(String brand, String type, String line, String sku, String colorName, String colorHex, 
+        /**
+         * Generates a label using the provided attributes, renders the SVG
+         * template and converts it to PNG.
+         */
+        public byte[] generateLabelFromTemplate(String brand, String type, String line, String sku, String colorName, String colorHex,
             String nozzleTemp, String bedTemp, int maxPrintSpeed, int dryingTime, int maxRh, String spoolId, int dryingTemp,
             Boolean dryingRequired, Boolean amsCompatible, Boolean toxicFumes) throws IOException, TranscoderException {
         

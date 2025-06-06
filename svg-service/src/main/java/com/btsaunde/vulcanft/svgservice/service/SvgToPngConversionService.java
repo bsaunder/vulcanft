@@ -17,11 +17,19 @@ import java.io.IOException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+/**
+ * Service that handles conversion of SVG markup to PNG images using Apache
+ * Batik.
+ */
 @Service
 public class SvgToPngConversionService {
 
+    /** Logger instance for this service. */
     private static final Logger logger = LoggerFactory.getLogger(SvgToPngConversionService.class);
 
+    /**
+     * Convert an SVG string to a PNG image using the specified DPI for rendering.
+     */
     public byte[] convertSvgToPng(String svgContent, int dpi) throws IOException, TranscoderException {
 
         // Remove any BOM characters
@@ -62,7 +70,10 @@ public class SvgToPngConversionService {
         return outputStream.toByteArray();
     }
 
-    // Method to remove BOM from a string if present
+    /**
+     * Remove any UTF-8 BOM character that may appear at the start of the provided
+     * string.
+     */
     public static String removeBOM(String xmlContent) {
         // Check if BOM is at the beginning of the string
         if (xmlContent.startsWith("\uFEFF")) {
