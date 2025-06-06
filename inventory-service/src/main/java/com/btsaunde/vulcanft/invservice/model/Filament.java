@@ -3,6 +3,9 @@ package com.btsaunde.vulcanft.invservice.model;
 import com.btsaunde.vulcanft.invservice.model.enums.FilamentType;
 import jakarta.persistence.*;
 
+/**
+ * Represents a specific filament product.
+ */
 @Entity
 @Table(name = "filaments")
 public class Filament {

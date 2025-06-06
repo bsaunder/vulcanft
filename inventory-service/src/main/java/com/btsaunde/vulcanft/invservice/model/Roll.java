@@ -10,6 +10,9 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.EnumType;
 
+/**
+ * Entity representing a physical roll of filament.
+ */
 @Entity
 @Table(name = "rolls")
 public class Roll {
@@ -25,6 +28,9 @@ public class Roll {
     private LocalDate dateOpened;
     private LocalDate dateSealed;
 
+    /**
+     * Convenience constructor used for manual creation of rolls.
+     */
     public Roll(Long rollId, Double startingSize, String filament, String roll, RollLocation location, LocalDate dateOpened, LocalDate dateSealed) {
         this.rollId = rollId;
         this.startingSize = startingSize;
