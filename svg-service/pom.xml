@@ -26,9 +26,10 @@
 		<tag/>
 		<url/>
 	</scm>
-	<properties>
-		<java.version>21</java.version>
-	</properties>
+        <properties>
+                <java.version>21</java.version>
+                <snippetsDir>${project.build.directory}/generated-snippets</snippetsDir>
+        </properties>
 	<dependencies>
 		<!-- Spring Dependencies -->
 		<dependency>
@@ -39,11 +40,16 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
+                <dependency>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-test</artifactId>
+                        <scope>test</scope>
+                </dependency>
+                <dependency>
+                        <groupId>org.springframework.restdocs</groupId>
+                        <artifactId>spring-restdocs-mockmvc</artifactId>
+                        <scope>test</scope>
+                </dependency>
 
 		<!-- Apache Batik Dependencies for SVG to PNG Conversion -->
 		<dependency>
@@ -56,11 +62,38 @@
 
 	<build>
 		<finalName>${project.artifactId}</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+                <plugins>
+                        <plugin>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-maven-plugin</artifactId>
+                        </plugin>
+                        <plugin>
+                                <groupId>org.asciidoctor</groupId>
+                                <artifactId>asciidoctor-maven-plugin</artifactId>
+                                <version>2.2.1</version>
+                                <executions>
+                                        <execution>
+                                                <id>generate-docs</id>
+                                                <phase>prepare-package</phase>
+                                                <goals>
+                                                        <goal>process-asciidoc</goal>
+                                                </goals>
+                                                <configuration>
+                                                        <backend>html</backend>
+                                                        <attributes>
+                                                                <snippets>${snippetsDir}</snippets>
+                                                        </attributes>
+                                                </configuration>
+                                        </execution>
+                                </executions>
+                                <dependencies>
+                                        <dependency>
+                                                <groupId>org.springframework.restdocs</groupId>
+                                                <artifactId>spring-restdocs-asciidoctor</artifactId>
+                                                <version>${spring-restdocs.version}</version>
+                                        </dependency>
+                                </dependencies>
+                        </plugin>
 			<!-- <plugin>
 				<groupId>com.spotify</groupId>
 				<artifactId>dockerfile-maven-plugin</artifactId>
