@@ -1,0 +1,10 @@
+= SVG Service API
+:toc: left
+:toclevels: 2
+
+== Home
+
+The following example documents the home endpoint.
+
+include::{snippets}/home/http-request.adoc[]
+include::{snippets}/home/http-response.adoc[]
