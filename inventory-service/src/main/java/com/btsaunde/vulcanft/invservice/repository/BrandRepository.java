@@ -5,6 +5,9 @@ import org.springframework.stereotype.Repository;
 
 import com.btsaunde.vulcanft.invservice.model.Brand;
 
+/**
+ * JPA repository for {@link Brand} entities.
+ */
 @Repository
 public interface BrandRepository extends JpaRepository<Brand, Long> {
 }
