@@ -1,19 +1,19 @@
 # VulcanFT Inventory Service
 
 ## Description
-The Inventory Service manages brands, filament rolls and parts for VulcanFT. It provides REST APIs backed by a MySQL database.
+The Inventory Service manages brands, filament rolls and parts for VulcanFT. It provides REST APIs backed by a PostgreSQL database.
 
 ## Tech Stack
 - Java 21 with Spring Boot 3
 - Spring MVC, Data JPA and Thymeleaf
-- MySQL
+- PostgreSQL
 - Maven
 
 ## How to Run
 ```bash
 mvn spring-boot:run
 ```
-The service starts on port `8080` and requires a running MySQL instance configured in `application.properties`.
+The service starts on port `8080` and requires a running PostgreSQL instance configured in `application.properties`.
 
 ## Testing
 Run all tests with:
